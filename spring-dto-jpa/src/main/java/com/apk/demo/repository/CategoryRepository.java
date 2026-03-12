@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.apk.demo.model.Category;
 
-public interface categoryRepository extends JpaRepository<Category,Long>{
+public interface CategoryRepository extends JpaRepository<Category,Long>{
 
 }
