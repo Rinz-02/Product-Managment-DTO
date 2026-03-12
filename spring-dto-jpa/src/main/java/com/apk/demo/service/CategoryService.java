@@ -10,7 +10,7 @@ public interface CategoryService
 	
 	public Category create(Category category);
 	
-	public Category edit(Long id);
+	public Category findById(Long id);
 	
 	public boolean delete(Long id);
 }
