@@ -4,8 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.apk.demo.mapper.CategoryMapper;
 import com.apk.demo.model.Category;
 import com.apk.demo.repository.CategoryRepository;
+import com.apk.demo.request.CreateRequestCategory;
+import com.apk.demo.request.UpdateRequestCategory;
 import com.apk.demo.service.CategoryService;
 
 public class CategoryServiceImpl implements CategoryService
@@ -21,9 +24,9 @@ public class CategoryServiceImpl implements CategoryService
 	}
 
 	@Override
-	public Category create(Category category) 
+	public Category create(CreateRequestCategory request) 
 	{
-		return categoryRepo.save(category);
+		return categoryRepo.save(CategoryMapper.toEntity(request));
 	}
 
 	@Override
@@ -45,5 +48,19 @@ public class CategoryServiceImpl implements CategoryService
 			return false;
 		}
 	}
+
+	@Override
+	public Category update(UpdateRequestCategory request) 
+	{
+		Category existing = categoryRepo.findById(request.getId())
+				.orElseThrow(() -> new RuntimeException("Category not found"));
+				
+		CategoryMapper.updateEntity(request, existing);
+		return categoryRepo.save(existing);
+						
+	}
+
+	
+	
 
 }
