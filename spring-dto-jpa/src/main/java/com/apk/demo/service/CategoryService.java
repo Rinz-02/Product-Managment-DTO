@@ -2,15 +2,22 @@ package com.apk.demo.service;
 
 import java.util.List;
 
-import com.apk.demo.model.Category;
+import org.springframework.stereotype.Service;
 
+import com.apk.demo.model.Category;
+import com.apk.demo.request.CreateRequestCategory;
+import com.apk.demo.request.UpdateRequestCategory;
+
+@Service
 public interface CategoryService 
 {
 	public List<Category> findAll();
 	
-	public Category create(Category category);
+	public Category create(CreateRequestCategory request);
 	
 	public Category findById(Long id);
 	
 	public boolean delete(Long id);
+
+	public Category update(UpdateRequestCategory request);
 }
