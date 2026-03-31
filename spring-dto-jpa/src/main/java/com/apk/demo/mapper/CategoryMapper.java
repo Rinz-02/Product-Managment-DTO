@@ -25,11 +25,13 @@ public class CategoryMapper
 				.build();
 	}
 	
+	//update
 	public static void updateEntity(UpdateRequestCategory request,Category existing)
 	{
 		 existing.setName(request.getName());
 		 existing.setDescription(request.getDescription());
 	}
+	
 
 	
 }

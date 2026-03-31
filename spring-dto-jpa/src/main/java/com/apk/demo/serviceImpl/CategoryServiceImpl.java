@@ -3,6 +3,7 @@ package com.apk.demo.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.apk.demo.mapper.CategoryMapper;
 import com.apk.demo.model.Category;
@@ -11,6 +12,7 @@ import com.apk.demo.request.CreateRequestCategory;
 import com.apk.demo.request.UpdateRequestCategory;
 import com.apk.demo.service.CategoryService;
 
+@Service
 public class CategoryServiceImpl implements CategoryService
 {
 

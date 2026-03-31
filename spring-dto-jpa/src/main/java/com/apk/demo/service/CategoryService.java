@@ -8,7 +8,7 @@ import com.apk.demo.model.Category;
 import com.apk.demo.request.CreateRequestCategory;
 import com.apk.demo.request.UpdateRequestCategory;
 
-@Service
+
 public interface CategoryService 
 {
 	public List<Category> findAll();
