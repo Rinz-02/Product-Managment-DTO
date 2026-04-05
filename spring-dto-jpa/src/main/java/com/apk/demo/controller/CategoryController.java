@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.apk.demo.model.Category;
 import com.apk.demo.request.CreateRequestCategory;
 import com.apk.demo.request.UpdateRequestCategory;
 import com.apk.demo.service.CategoryService;
-
+ 
 
 
 @RestController
 @RequestMapping("/api/category")
 @CrossOrigin(origins = "http://localhost:5173")
-public class CategoryController {
+public class CategoryController 
+{
 	@Autowired
 	private CategoryService categoryService;
 
@@ -63,8 +63,8 @@ public class CategoryController {
 	}
 
 	// UPDATE
-	@GetMapping("/eidt/{id}")
-	public ResponseEntity<?> edit(@RequestParam Long id) 
+	@GetMapping("/edit/{id}")
+	public ResponseEntity<?> edit(@PathVariable Long id) 
 	{
 		try 
 		{
@@ -81,7 +81,7 @@ public class CategoryController {
 		try 
 		{
 			Category edit = categoryService.update(request);
-			return null;
+			return ResponseEntity.ok(edit);
 		}catch (RuntimeException e) 
 		{
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("message", e.getMessage()));
