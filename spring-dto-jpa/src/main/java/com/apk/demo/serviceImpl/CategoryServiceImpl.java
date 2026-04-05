@@ -57,7 +57,9 @@ public class CategoryServiceImpl implements CategoryService
 		Category existing = categoryRepo.findById(request.getId())
 				.orElseThrow(() -> new RuntimeException("Category not found"));
 				
-		CategoryMapper.updateEntity(request, existing);
+		existing.setName(request.getName());
+		existing.setDescription(request.getDescription());
+		
 		return categoryRepo.save(existing);
 						
 	}
