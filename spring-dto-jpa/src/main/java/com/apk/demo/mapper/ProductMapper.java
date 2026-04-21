@@ -10,15 +10,17 @@ public class ProductMapper
 	public static ResponseProduct toResponse(Product product)
 	{
 		return ResponseProduct.builder()
+				.id(product.getId())
 				.name(product.getName())
 				.price(product.getPrice())
-				.description(product.getDescription())
 				.quantity(product.getQuantity())
+				.description(product.getDescription())
 				.status(product.getStatus())
 				.categoryId(product.getCategory().getId())
 				.build();
 	}
 	
+	//
 	public static Product toEntity(CreateRequestProduct request)
 	{
 		Category category = new Category();
@@ -27,7 +29,6 @@ public class ProductMapper
 		Product product = new Product();
 		product.setName(request.getName());
 		product.setPrice(request.getPrice());
-		product.setDescription(request.getDescription());
 		product.setQuantity(request.getQuantity());
 		product.setStatus(request.getStatus());
 		product.setCategory(category);
