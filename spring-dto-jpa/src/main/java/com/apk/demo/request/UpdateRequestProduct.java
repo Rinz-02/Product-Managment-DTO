@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class UpdateRequestProduct 
 {
-	private long id;
+	private Long id;
 	private String name;
 	private String price;
-	private String description;
 	private String status;
+	private String description;
 	private String quantity;
 	
 	private Long categoryId;

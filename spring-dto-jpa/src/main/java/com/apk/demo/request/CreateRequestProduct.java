@@ -13,9 +13,9 @@ public class CreateRequestProduct
 {
 	private String name;
 	private String price;
+	private String description;
 	private String status;
 	private String quantity;
-	private String description;
 	
 	private Long categoryId;
 }
