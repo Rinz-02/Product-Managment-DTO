@@ -14,8 +14,8 @@ public class ResponseProduct
 	private Long id;
 	private String name;
 	private String price;
-	private String description;
 	private String quantity;
+	private String description;
 	private String status;
 	
 	private Long categoryId;
