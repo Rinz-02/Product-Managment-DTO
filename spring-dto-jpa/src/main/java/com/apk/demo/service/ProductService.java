@@ -2,18 +2,21 @@ package com.apk.demo.service;
 
 import java.util.List;
 
-import org.springframework.stereotype.Service;
 
 import com.apk.demo.model.Product;
+import com.apk.demo.request.CreateRequestProduct;
+import com.apk.demo.request.UpdateRequestProduct;
+import com.apk.demo.response.ResponseProduct;
 
-@Service
 public interface ProductService 
 {
-	public List<Product> findAll();
+	public List<ResponseProduct> findAll();
 	
-	public Product save(Product product);
+	public ResponseProduct save(CreateRequestProduct product);
 	
-	public Product findById(Long id);
+	public ResponseProduct findById(Long id);
+	
+	public ResponseProduct update(UpdateRequestProduct product);
 	
 	public boolean delete(Long id);
 	
